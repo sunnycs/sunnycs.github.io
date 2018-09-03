@@ -7,7 +7,7 @@
     
 
     <title>
-      Hello World | 旭 
+      Hello World | 时光 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -18,14 +18,14 @@
 
     <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World | 旭">
+<meta property="og:title" content="Hello World | 时光">
 <meta property="og:url" content="http://yoursite.com/2018/09/03/hello-world/index.html">
-<meta property="og:site_name" content="旭">
+<meta property="og:site_name" content="时光">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-09-03T04:15:40.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World | 旭">
+<meta name="twitter:title" content="Hello World | 时光">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
     
     
@@ -58,7 +58,7 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">旭</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">时光</a></h1>
         <hr class="panel-cover__divider" />
 
         
@@ -209,14 +209,42 @@ classes that you can use:
 
     
 
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript"> 
-        $(document).ready(function(){
-            MathJax.Hub.Config({ 
-                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
-            });
-        });
-    </script>
+    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	    "HTML-CSS": { 
+	        preferredFont: "TeX", 
+	        availableFonts: ["STIX","TeX"], 
+	        linebreaks: { automatic:true }, 
+	        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) 
+	    },
+	    tex2jax: { 
+	        inlineMath: [ ["$", "$"], ["\\(","\\)"] ], 
+	        processEscapes: true, 
+	        ignoreClass: "tex2jax_ignore|dno",
+	        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+	    },
+	    TeX: {  
+	        equationNumbers: { autoNumber: "AMS" },
+	        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, 
+	        Macros: { href: "{}" } 
+	    },
+	    messageStyle: "none"
+	    }); 
+	</script>
+	<!-- 给MathJax元素添加has-jax class -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Queue(function() {
+	        var all = MathJax.Hub.getAllJax(), i;
+	        for(i=0; i < all.length; i += 1) {
+	            all[i].SourceElement().parentNode.className += ' has-jax';
+	        }
+	    });
+	</script>
+	<!-- 通过连接CDN加载MathJax的js代码 -->
+	<script type="text/javascript" async
+	  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
 
 
     
